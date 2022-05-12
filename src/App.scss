@@ -1,21 +1,20 @@
-
-@import "styles/base";
+@import 'styles/base';
 
 .App {
-  &-header{
-    &-logo{
-     max-width: 80px;
+  &-header {
+    &-logo {
+      max-width: 80px;
     }
   }
-  &-content{
+  &-content {
     padding: 1rem 4rem;
-    h3{
+    h3 {
       color: $primary-color;
     }
-    p{
+    p {
       color: $secondary-color;
     }
-    .bye-bye{
+    .bye-bye {
       margin: 4rem 0 0;
       text-align: center;
       background: $terciary-color;

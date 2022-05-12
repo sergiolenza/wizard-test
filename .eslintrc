@@ -1,0 +1,55 @@
+{
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "react/destructuring-assignment": 0,
+    "react/sort-comp": 0,
+    "react/jsx-filename-extension": 0,
+    "react/prefer-stateless-function": 0,
+    "react/function-component-definition": 0,
+    "react/jsx-curly-brace-presence": 0,
+    "react/prop-types": 0,
+    "react/forbid-prop-types": 1,
+    "react/require-default-props": 1,
+    "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": [
+      "error",
+      {
+        "forbid": [">", "}", "\""]
+      }
+    ],
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+
+    "import/no-extraneous-dependencies": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+
+    "no-console": 2,
+    "padded-blocks": 0,
+    "key-spacing": [
+      0,
+      {
+        "align": "colon",
+        "beforeColon": true,
+        "afterColon": true
+      }
+    ],
+    "curly": ["error", "all"],
+    "prettier/prettier": "warn"
+  }
+}
