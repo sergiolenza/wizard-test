@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import OpenbankLogo from './assets/img/key_openbank.png';
-import Step1 from './views/ProductInformation';
-import Step2 from './views/Form';
-import Step3 from './views/Feedback';
+import Step1 from './views/ProductInformation/ProductInformation';
+import Step2 from './views/Form/Form';
+import Step3 from './views/Feedback/Feedback';
 
 import './App.scss';
 

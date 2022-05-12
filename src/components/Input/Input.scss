@@ -1,0 +1,9 @@
+@import '../../styles/base';
+
+.input-container {
+  border: 1px solid $border-color;
+  min-width: 300px;
+  &:hover {
+    border: 1px solid red;
+  }
+}
