@@ -1,9 +1,78 @@
 @import '../../styles/base';
 
+$input-disabled: #bbb;
+$input-focused: darken($input-disabled, 10%);
+$input-border: 1.5px;
+
 .input-container {
-  border: 1px solid $border-color;
-  min-width: 300px;
-  &:hover {
-    border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  flex: 1;
+  margin-bottom: 1rem;
+  &.has-error,
+  &.has-error .input-box .input,
+  &.has-error .input-box .input-decorator,
+  &.has-error .input-box .input::placeholder {
+    color: orangered;
+  }
+  &.has-error .input-box {
+    border: solid $input-border orangered;
+    margin-bottom: 0;
+  }
+  &.has-error .input-box:hover {
+    border: solid $input-border lighten(orangered, 20%);
+  }
+  &.full-width {
+    max-width: 100%;
+  }
+  .input-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .input-box {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    transition: border 0.2s ease-out;
+    position: relative;
+    border: solid $input-border $input-disabled;
+    border-radius: $border-radius;
+    margin-bottom: 1.5rem;
+    &:hover {
+      border: solid $input-border $input-focused;
+    }
+    &.active {
+      border: solid $input-border $secondary-color;
+    }
+    .input {
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      outline: none;
+      border: none;
+      flex: 1;
+      padding: 0 0 0 1rem;
+      font-size: 1rem;
+      color: $secondary-color;
+      &[type='password'] {
+        letter-spacing: 8px;
+      }
+      &::placeholder {
+        letter-spacing: inherit;
+        letter-spacing: 0;
+        color: $input-disabled;
+      }
+    }
+    .input-decorator {
+      margin: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $input-disabled;
+    }
+  }
+  .input-error-placeholder {
+    margin-top: 4px;
+    height: 20px;
   }
 }

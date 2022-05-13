@@ -15,6 +15,7 @@
   "extends": ["airbnb", "plugin:prettier/recommended"],
   "plugins": ["prettier"],
   "rules": {
+    "react/jsx-props-no-spreading": 0,
     "react/destructuring-assignment": 0,
     "react/sort-comp": 0,
     "react/jsx-filename-extension": 0,
@@ -39,7 +40,7 @@
     "import/extensions": 0,
     "import/no-unresolved": 0,
 
-    "no-console": 2,
+    "no-console": 1,
     "padded-blocks": 0,
     "key-spacing": [
       0,

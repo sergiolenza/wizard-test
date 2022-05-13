@@ -1,5 +1,6 @@
 {
   "files.exclude": {
+    "**/.vscode": true,
     "node_modules": true,
     ".pnp": true,
     "**/.pnp.js": true,
@@ -12,7 +13,6 @@
     "**/.env.production.local": true,
     "**/npm-debug.log*": true,
     "**/yarn-debug.log*": true,
-    "**/yarn-error.log*": true,
-    "**/.vscode": true
+    "**/yarn-error.log*": true
   }
 }

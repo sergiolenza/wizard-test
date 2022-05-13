@@ -1,0 +1,66 @@
+@import './breakpoints';
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// Create button variants
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
+  &:hover {
+    color: $color;
+    background-color: darken($background, 5%);
+    border-color: darken($border, 5%);
+  }
+  &:active {
+    color: $color;
+    background-color: darken($background, 5%);
+    background-image: none;
+    border-color: darken($border, 5%);
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 10%);
+      border-color: darken($border, 10%);
+    }
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+      border-color: $border;
+    }
+    cursor: not-allowed;
+  }
+}

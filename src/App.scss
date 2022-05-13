@@ -1,27 +1,23 @@
 @import 'styles/base';
+@import 'styles/_mixins';
 
-.App {
-  &-header {
-    &-logo {
-      max-width: 80px;
+html {
+  background-color: $background-color;
+  color: $secondary-color;
+  .container {
+    transform: translateY(-60px);
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    @include md {
+      width: 750px;
     }
-  }
-  &-content {
-    padding: 1rem 4rem;
-    h3 {
-      color: $primary-color;
+    @include lg {
+      width: 970px;
     }
-    p {
-      color: $secondary-color;
-    }
-    .bye-bye {
-      margin: 4rem 0 0;
-      text-align: center;
-      background: $terciary-color;
-      border: 1px solid #ddd;
-      color: #ababab;
-      padding: 1rem;
-      border-radius: 4px;
+    @include xl {
+      width: 1170px;
     }
   }
 }

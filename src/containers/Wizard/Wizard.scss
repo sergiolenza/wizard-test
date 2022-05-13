@@ -1,0 +1,43 @@
+@import '../../styles/base.scss';
+@import '../../styles/mixins.scss';
+
+.wizard {
+  border-radius: $border-radius;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-shadow: $elevation-3;
+}
+
+.wizard--content {
+  padding: 1rem;
+  @include md {
+    padding: 1rem 2rem;
+  }
+  @include lg {
+    padding: 2rem 3rem;
+  }
+  @include xl {
+    padding: 2rem 4rem;
+  }
+}
+
+.wizard--fieldset {
+  border: none;
+}
+
+.wizard--footer {
+  border-top: 1px solid #eee;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include md {
+    padding: 1rem 2rem;
+  }
+  @include lg {
+    padding: 1rem;
+  }
+  @include xl {
+    padding: 2rem;
+  }
+}

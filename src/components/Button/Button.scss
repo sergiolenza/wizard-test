@@ -1,0 +1,26 @@
+@import '../../styles/base';
+@import '../../styles/mixins';
+
+.button {
+  font-family: inherit;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: $border-radius;
+  padding: 1rem;
+  border-width: 2px;
+  border-color: transparent;
+  min-width: 136px;
+  cursor: pointer;
+  &.contained {
+    @include button-variant(white, $secondary-color, transparent);
+  }
+  &.text {
+    @include button-variant($secondary-color, white, transparent);
+  }
+  &:disabled {
+    opacity: 50%;
+  }
+  @include sm {
+    padding: 1rem 2rem;
+  }
+}
