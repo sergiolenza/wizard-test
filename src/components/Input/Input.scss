@@ -10,27 +10,28 @@ $input-border: 1.5px;
   max-width: 360px;
   flex: 1;
   margin-bottom: 1rem;
+  transition: border 0.2s ease-out, color 0.2s ease-out;
   &.has-error,
-  &.has-error .input-box .input,
-  &.has-error .input-box .input-decorator,
-  &.has-error .input-box .input::placeholder {
+  &.has-error .input--box .input--field,
+  &.has-error .input--box .input--box--decorator,
+  &.has-error .input--box .input--field::placeholder {
     color: orangered;
   }
-  &.has-error .input-box {
+  &.has-error .input--box {
     border: solid $input-border orangered;
     margin-bottom: 0;
   }
-  &.has-error .input-box:hover {
+  &.has-error .input--box:hover {
     border: solid $input-border lighten(orangered, 20%);
   }
   &.full-width {
     max-width: 100%;
   }
-  .input-label {
+  .input--label {
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
-  .input-box {
+  .input--box {
     display: flex;
     align-items: center;
     height: 3rem;
@@ -45,7 +46,7 @@ $input-border: 1.5px;
     &.active {
       border: solid $input-border $secondary-color;
     }
-    .input {
+    .input--field {
       height: 100%;
       font-family: 'Quicksand', sans-serif;
       outline: none;
@@ -63,15 +64,21 @@ $input-border: 1.5px;
         color: $input-disabled;
       }
     }
-    .input-decorator {
+    .input--box--decorator {
+      cursor: pointer;
       margin: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: $input-disabled;
+      &.text {
+        color: $secondary-color;
+      }
+      &.password {
+        color: $input-disabled;
+      }
     }
   }
-  .input-error-placeholder {
+  .input--error-placeholder {
     margin-top: 4px;
     height: 20px;
   }

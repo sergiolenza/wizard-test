@@ -22,6 +22,7 @@ const Input = ({
   fullWidth,
   ...props
 }) => {
+  const [inputType, setInputType] = useState(type);
   const [inputBoxClass, setInputBoxClass] = useState('');
   const [passwordScore, setPasswordScore] = useState(); // 0 = Too weak || 1 = Weak || 2 = Medium || 3 = Strong
 
@@ -47,11 +48,11 @@ const Input = ({
     }
   }, [error]);
 
-  // check password strength with debounced time
   const isInputPassword = type === 'password';
   const checkPassword = (event) => {
     setPasswordScore(passwordStrength(event.target.value).id);
   };
+  // check password strength with debounced time
   const debouncedCheckPassword = useCallback(debounce(checkPassword, 300), []);
   const handleOnChange = (ev) => {
     if (isInputPassword) {
@@ -60,16 +61,20 @@ const Input = ({
     onChange(ev);
   };
 
+  const handleOnClickPasswordDecorator = () => {
+    setInputType(inputType === 'text' ? 'password' : 'text');
+  };
+
   return (
     <div className={`input-container${error ? ' has-error' : ''}${fullWidth ? ' full-width' : ''}`}>
-      <label htmlFor={props.name} className="input-label">
+      <label htmlFor={props.name} className="input--label">
         {label}
       </label>
-      <div className={`input-box ${inputBoxClass}`}>
+      <div className={`input--box ${inputBoxClass ?? ''}`}>
         <input
-          className="input"
+          className="input--field"
           id={props.name}
-          type={type}
+          type={inputType}
           onClick={handleInputClick}
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
@@ -78,7 +83,10 @@ const Input = ({
           {...props}
         />
         {isInputPassword && (
-          <figure className="input-decorator">
+          <figure
+            className={`input--box--decorator ${inputType}`}
+            onClick={handleOnClickPasswordDecorator}
+          >
             <MdOutlineVisibility size="1.5em" />
           </figure>
         )}
@@ -86,7 +94,7 @@ const Input = ({
           <PasswordStrengthBar strength={passwordScore} />
         )}
       </div>
-      {error ? <small className="input-error-placeholder">{error}</small> : null}
+      {error ? <small className="input--error-placeholder">{error}</small> : null}
     </div>
   );
 };
