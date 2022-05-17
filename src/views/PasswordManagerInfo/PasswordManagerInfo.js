@@ -19,18 +19,24 @@ const PasswordManagerInfo = () => {
     <>
       <article className="wizard--content">
         <TextTitle>{t('pwInfo.createYourPassword')}</TextTitle>
-        <div className="info--tips">
-          <div className="info--tip">
+        <div className="password-manager-info">
+          <div className="password-manager-info--tip">
             <img
-              className="info--tip-image"
+              className="password-manager-info--tip-image"
               src={passwordsSvg}
               alt={t('pwInfo.rememberPasswords')}
             />
-            <small className="info--tip-text">{t('pwInfo.saveYourPasswords')}</small>
+            <small className="password-manager-info--tip-text">
+              {t('pwInfo.saveYourPasswords')}
+            </small>
           </div>
-          <div className="info--tip">
-            <img className="info--tip-image" src={safeBoxSvg} alt={t('pwInfo.safeBox')} />
-            <small className="info--tip-text">{t('pwInfo.createMasterKey')}</small>
+          <div className="password-manager-info--tip">
+            <img
+              className="password-manager-info--tip-image"
+              src={safeBoxSvg}
+              alt={t('pwInfo.safeBox')}
+            />
+            <small className="password-manager-info--tip-text">{t('pwInfo.createMasterKey')}</small>
           </div>
         </div>
         <h4>{t('pwInfo.howItWorks')}</h4>

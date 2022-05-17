@@ -85,12 +85,12 @@ const PasswordManagerCreation = () => {
       t('pwCreation.errors.mismatch'));
 
   return (
-    <form noValidate autoComplete="off" onSubmit={onSubmit}>
+    <form className="password-manager-creation" noValidate autoComplete="off" onSubmit={onSubmit}>
       <fieldset className="wizard--fieldset" disabled={loading}>
         <article className="wizard--content">
           <TextTitle>{t('pwCreation.createYourPassword')}</TextTitle>
           <p>{t('pwCreation.shouldCreatePassword')}</p>
-          <div className="creation-passwords">
+          <div className="password-manager-creation--passwords">
             <Input
               type="password"
               label={t('pwCreation.createYourMasterPassword')}
