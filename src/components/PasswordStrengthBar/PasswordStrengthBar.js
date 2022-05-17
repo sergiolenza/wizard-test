@@ -10,7 +10,10 @@ const STRENGTH_CLASS = {
 };
 
 const PasswordStrengthBar = ({ strength = 0 }) => (
-  <figure className={`password-strength-bar ${STRENGTH_CLASS[strength]}`} />
+  <figure
+    className={`password-strength-bar ${STRENGTH_CLASS[strength]}`}
+    aria-label="password-strength-bar"
+  />
 );
 
 export default PasswordStrengthBar;
