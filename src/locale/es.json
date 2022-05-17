@@ -1,1 +1,42 @@
-{}
+{
+  "common": {
+    "next": "Siguiente",
+    "cancel": "Cancelar",
+    "noMatch": "Página no encontrada"
+  },
+  "pwInfo": {
+    "createYourPassword": "Crea tu password manager",
+    "rememberPasswords": "Persona recordando contraseñas",
+    "saveYourPasswords": "Guarda aquí todas tus contraseñas, datos o cualquier información. Olvida las notas de papel y las aplicaciones no protegidas.",
+    "safeBox": "Caja de seguridad",
+    "createMasterKey": "Crea tu clave maestra: sólo tu podrás acceder a tus secretos con ella.",
+    "howItWorks": "Cómo funciona",
+    "createDifferentPassword": "En primer lugar debes crear una contraseña diferente para tus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien.",
+    "dataCanYouSave": "Qué datos puedes guardar",
+    "infoCanSave": "Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono móvil, el número de serie de alguno de tus dispositivos o cualquier información que necesites tener en lugar seguro."
+  },
+  "pwCreation": {
+    "createYourPassword": "Crea tu password manager",
+    "shouldCreatePassword": "En primer lugar debes crear una contraseña diferente para tus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien.",
+    "createYourMasterPassword": "Crea tu contraseña maestra",
+    "writeYourMasterPassword": "Escribe tu contraseña",
+    "repeatYourMasterPassword": "Repite tu contraseña maestra",
+    "repeatYourPassword": "Repite tu contraseña",
+    "alsoCanCreateHint": "También puedes crear una pista que te ayude a recordar tu contraseña maestra.",
+    "createHint": "Crea tu pista para recordar tu contraseña (opcional)",
+    "writeYourHint": "Introduce tu pista",
+    "create": "Crear",
+    "creating": "Creando…",
+    "errors": {
+      "patternMismatch": "La contraseña tiene que contener de 8 a 24 caracteres, al menos 1 número y 1 mayúscula.",
+      "valueMissing": "Este campo es obligatorio.",
+      "mismatch": "Esta contraseña tiene ser igual que la primera."
+    }
+  },
+  "pwFeedback": {
+    "thereIsAnError": "Ha habido un error",
+    "weCannotUpdate": "No hemos podido modificar tu Contraseña Maestra. Inténtalo más tarde.",
+    "passwordManagerCreated": "¡Tu password manager ya está creado!",
+    "loremIpsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh."
+  }
+}

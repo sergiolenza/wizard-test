@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { t } from 'i18next';
+import { MdChevronRight } from 'react-icons/md';
 import Input from '../../components/Input/Input';
 import TextTitle from '../../components/TextTitle/TextTitle';
 import Button from '../../components/Button/Button';
@@ -20,38 +22,10 @@ const PasswordManagerCreation = () => {
       await submitForm();
       navigate('/password-manager-feedback', { state: { error: false } });
     } catch (e) {
-      console.log(e);
       navigate('/password-manager-feedback', { state: { error: true } });
     } finally {
       setLoading(false);
     }
-    // setMutationError(false);
-    // setCloseDisabled(true);
-
-    // client
-    //   .mutate({
-    //     mutation: TENANT_USER_MUTATION,
-    //     variables: {
-    //       fullName,
-    //       email,
-    //       phoneNumber:
-    //         countryCallingCode && nationalNumber ? `+${countryCallingCode}${nationalNumber}` : '',
-    //       ...(image.preview ? { base64Image: await toBase64(image.preview) } : {}),
-    //     },
-    //   })
-    //   .then(() => {
-    //     closeMenu();
-    //     openSuccessToast();
-    //   })
-    //   .catch((err) => {
-    //     // eslint-disable-next-line
-    //     console.error(err);
-    //     setMutationError(err);
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //     setCloseDisabled(false);
-    //   });
   };
 
   const customValidations = ({ firstPassword, secondPassword }) => {
@@ -94,34 +68,33 @@ const PasswordManagerCreation = () => {
   const firstPasswordErrorMessage =
     (!!errors.firstPassword &&
       !!errors.firstPassword.patternMismatch &&
-      'La contraseña tiene que contener de 8 a 24 caracteres, al menos 1 número y 1 mayúscula') ||
-    (!!errors.firstPassword && !!errors.firstPassword.valueMissing && 'Este campo es obligatorio');
+      t('pwCreation.errors.patternMismatch')) ||
+    (!!errors.firstPassword &&
+      !!errors.firstPassword.valueMissing &&
+      t('pwCreation.errors.valueMissing'));
 
   const secondPasswordErrorMessage =
     (!!errors.secondPassword &&
       !!errors.secondPassword.patternMismatch &&
-      'La contraseña tiene que contener de 8 a 24 caracteres, al menos 1 número y 1 mayúscula') ||
+      t('pwCreation.errors.patternMismatch')) ||
     (!!errors.secondPassword &&
       !!errors.secondPassword.valueMissing &&
-      'Este campo es obligatorio') ||
+      t('pwCreation.errors.valueMissing')) ||
     (!!errors.secondPassword &&
       !!errors.secondPassword.mismatch &&
-      'Esta contraseña tiene ser igual que la primera');
+      t('pwCreation.errors.mismatch'));
 
   return (
     <form noValidate autoComplete="off" onSubmit={onSubmit}>
       <fieldset className="wizard--fieldset" disabled={loading}>
         <article className="wizard--content">
-          <TextTitle>Crea tu password manager</TextTitle>
-          <p>
-            En primer lugar debes crear una contraseña diferente para tus pertenencias electrónicas.
-            No podrás recuperar tu contraseña, así que recuérdala bien.
-          </p>
+          <TextTitle>{t('pwCreation.createYourPassword')}</TextTitle>
+          <p>{t('pwCreation.shouldCreatePassword')}</p>
           <div className="creation-passwords">
             <Input
               type="password"
-              label="Crea tu contraseña maestra"
-              placeholder="Escribe tu contraseña"
+              label={t('pwCreation.createYourMasterPassword')}
+              placeholder={t('pwCreation.writeYourMasterPassword')}
               showStrength
               required
               error={firstPasswordErrorMessage}
@@ -130,19 +103,19 @@ const PasswordManagerCreation = () => {
             />
             <Input
               type="password"
-              label="Repite tu contraseña maestra"
-              placeholder="Repite tu contraseña"
+              label={t('pwCreation.repeatYourMasterPassword')}
+              placeholder={t('pwCreation.repeatYourPassword')}
               required
               error={secondPasswordErrorMessage}
               pattern={passwordPattern}
               {...secondPasswordProps}
             />
           </div>
-          <p>También puedes crear una pista que te ayude a recordar tu contraseña maestra.</p>
+          <p>{t('pwCreation.alsoCanCreateHint')}.</p>
           <Input
             type="text"
-            label="Crea tu pista para recordar tu contraseña (opcional)"
-            placeholder="Introduce tu pista"
+            label={t('pwCreation.createHint')}
+            placeholder={t('pwCreation.writeYourHint')}
             fullWidth
             maxLength={255}
             {...hintProps}
@@ -151,10 +124,11 @@ const PasswordManagerCreation = () => {
       </fieldset>
       <footer className="wizard--footer">
         <Button variant="text" disabled={loading} onClick={handleCancelOnClick}>
-          Cancelar
+          {t('common.cancel')}
         </Button>
         <Button type="submit" disabled={loading} variant="contained">
-          {loading ? 'Creando…' : 'Crear'}
+          {loading ? t('pwCreation.creating') : t('pwCreation.create')}{' '}
+          <MdChevronRight size="1.5em" />
         </Button>
       </footer>
     </form>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
+import { t } from 'i18next';
 import { BsCheck2Circle } from 'react-icons/bs';
 import { MdOutlineWarningAmber } from 'react-icons/md';
-import './PasswordManagerFeedback.scss';
+import Placeholder from '../../components/Placeholder/Placeholder';
 
 const PasswordManagerFeedback = () => {
   const { state } = useLocation();
@@ -15,31 +16,21 @@ const PasswordManagerFeedback = () => {
 
   const ErrorFeedback = (
     <article className="wizard--content">
-      <div className="password-manager-feedback">
-        <div className="password-manager-feedback--icon">
-          <MdOutlineWarningAmber size="3em" />
-        </div>
-        <div className="password-manager-feedback--text">
-          <h2>Ha habido un error</h2>
-          <p>No hemos podido modificar tu Contraseña Maestra. Inténtalo más tarde.</p>
-        </div>
-      </div>
+      <Placeholder
+        icon={<MdOutlineWarningAmber size="3em" />}
+        primaryText={t('pwFeedback.thereIsAnError')}
+        secondaryText={t('pwFeedback.weCannotUpdate')}
+      />
     </article>
   );
 
   const SuccessFeedback = (
     <article className="wizard--content">
-      <div className="password-manager-feedback">
-        <div className="password-manager-feedback--icon">
-          <BsCheck2Circle size="3em" />
-        </div>
-        <div className="password-manager-feedback--text">
-          <h2>¡Tu password manager ya está creado!</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.
-          </p>
-        </div>
-      </div>
+      <Placeholder
+        icon={<BsCheck2Circle size="3em" />}
+        primaryText={t('pwFeedback.passwordManagerCreated')}
+        secondaryText={t('pwFeedback.loremIpsum')}
+      />
     </article>
   );
 

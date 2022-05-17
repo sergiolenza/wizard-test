@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { t } from 'i18next';
+import { MdChevronRight } from 'react-icons/md';
 import TextTitle from '../../components/TextTitle/TextTitle';
 import Button from '../../components/Button/Button';
 import passwordsSvg from '../../assets/img/group.svg';
 import safeBoxSvg from '../../assets/img/group-3.svg';
-
 import './PasswordManagerInfo.scss';
 
 const PasswordManagerInfo = () => {
@@ -17,44 +18,32 @@ const PasswordManagerInfo = () => {
   return (
     <>
       <article className="wizard--content">
-        <TextTitle>Crea tu password manager</TextTitle>
+        <TextTitle>{t('pwInfo.createYourPassword')}</TextTitle>
         <div className="info--tips">
           <div className="info--tip">
             <img
               className="info--tip-image"
               src={passwordsSvg}
-              alt="Person remembering passwords"
+              alt={t('pwInfo.rememberPasswords')}
             />
-            <small className="info--tip-text">
-              Guarda aquí todas tus contraseñas, datos o cualquier información. Olvida las notas de
-              papel y las aplicaciones no protegidas.
-            </small>
+            <small className="info--tip-text">{t('pwInfo.saveYourPasswords')}</small>
           </div>
           <div className="info--tip">
-            <img className="info--tip-image" src={safeBoxSvg} alt="Safe box" />
-            <small className="info--tip-text">
-              Crea tu clave maestra: sólo tu podrás acceder a tus secretos con ella.
-            </small>
+            <img className="info--tip-image" src={safeBoxSvg} alt={t('pwInfo.safeBox')} />
+            <small className="info--tip-text">{t('pwInfo.createMasterKey')}</small>
           </div>
         </div>
-        <h4>Cómo funciona</h4>
-        <p>
-          En primer lugar debes crear una contraseña diferente para tus pertenencias electrónicas.
-          No podrás recuperar tu contraseña, así que recuérdala bien.
-        </p>
-        <h4>Qué datos puedes guardar</h4>
-        <p>
-          Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono móvil, el número de
-          serie de alguno de tus dispositivos o cualquier información que necesites tener en lugar
-          seguro.
-        </p>
+        <h4>{t('pwInfo.howItWorks')}</h4>
+        <p>{t('pwInfo.createDifferentPassword')}</p>
+        <h4>{t('pwInfo.dataCanYouSave')}</h4>
+        <p>{t('pwInfo.infoCanSave')}</p>
       </article>
       <footer className="wizard--footer">
         <Button variant="text" disabled>
-          Cancelar
+          {t('common.cancel')}
         </Button>
         <Button variant="contained" onClick={handleNextOnClick}>
-          Siguiente
+          {t('common.next')} <MdChevronRight size="1.5em" />
         </Button>
       </footer>
     </>

@@ -1,8 +1,28 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
+import i18next from 'i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import enTranslations from './locale/en.json';
+import esTranslations from './locale/es.json';
+import './index.css';
+
+i18next.use(LanguageDetector).init({
+  detection: { order: ['navigator'] },
+  fallbackLng: 'en',
+  interpolation: {
+    escapeValue: false,
+  },
+  resources: {
+    en: {
+      translation: enTranslations,
+    },
+    es: {
+      translation: esTranslations,
+    },
+  },
+});
 
 const root = createRoot(document.getElementById('root'));
 root.render(

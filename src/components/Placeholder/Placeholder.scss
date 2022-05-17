@@ -1,11 +1,11 @@
-.password-manager-feedback {
+.placeholder {
   display: flex;
   align-items: center;
-  .password-manager-feedback--icon {
+  .placeholder--icon {
     flex: none;
     margin-right: 2rem;
   }
-  .password-manager-feedback--text {
+  .placeholder--text {
     flex: 1;
   }
 }

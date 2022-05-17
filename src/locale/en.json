@@ -1,0 +1,42 @@
+{
+  "common": {
+    "next": "Next",
+    "cancel": "Cancel",
+    "noMatch": "Page not found"
+  },
+  "pwInfo": {
+    "createYourPassword": "Create your password manager",
+    "rememberPasswords": "Person remembering passwords",
+    "saveYourPasswords": "Store all your passwords, data or any information here. Forget paper notes and unprotected applications.",
+    "safeBox": "Safe deposit box",
+    "createMasterKey": "Create your master password: only you will be able to access your secrets with it.",
+    "howItWorks": "How it works",
+    "createDifferentPassword": "First of all you must create a different password for your electronic belongings. You will not be able to recover your password, so remember it well.",
+    "dataCanYouSave": "What data can you save",
+    "infoCanSave": "For example, your card number, the PIN and PUK of your cell phone, the serial number of one of your devices or any information you need to keep in a safe place."
+  },
+  "pwCreation": {
+    "createYourPassword": "Create your password manager",
+    "shouldCreatePassword": "First of all you must create a different password for your electronic belongings. You will not be able to recover your password, so remember it well.",
+    "createYourMasterPassword": "Create your master password",
+    "writeYourMasterPassword": "Write your password",
+    "repeatYourMasterPassword": "Repeat your master password",
+    "repeatYourPassword": "Repeat your password",
+    "alsoCanCreateHint": "You can also create a hint to help you remember your master password.",
+    "createHint": "Create your hint to remember your password (optional)",
+    "writeYourHint": "Write your hint",
+    "create": "Create",
+    "creating": "Creating…",
+    "errors": {
+      "patternMismatch": "The password must contain 8 to 24 characters, at least 1 number and 1 capital letter.",
+      "valueMissing": "This field is required.",
+      "mismatch": "This password must be the same as the first one."
+    }
+  },
+  "pwFeedback": {
+    "thereIsAnError": "There has been an error",
+    "weCannotUpdate": "We were unable to change your Master Password. Please try again later.",
+    "passwordManagerCreated": "Your password manager is already created!",
+    "loremIpsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh."
+  }
+}

@@ -19,11 +19,7 @@ const App = () => {
                 <Wizard />
               </Suspense>
             }
-          >
-            {/* <Route path="/" element={<Navigate replace to="/password-manager-info" />} />
-            <Route path="*" element={<span>NO MATCH</span>} /> */}
-          </Route>
-          {/* <Route path="*" element={<span>NO MATCH</span>} /> */}
+          />
         </Routes>
       </div>
     </Router>
