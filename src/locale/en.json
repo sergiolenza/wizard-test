@@ -37,6 +37,8 @@
     "thereIsAnError": "There has been an error",
     "weCannotUpdate": "We were unable to change your Master Password. Please try again later.",
     "passwordManagerCreated": "Your password manager is already created!",
-    "loremIpsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh."
+    "loremIpsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.",
+    "backToPasswordManager": "Back to Password Manager",
+    "access": "Access"
   }
 }

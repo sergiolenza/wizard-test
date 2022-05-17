@@ -37,6 +37,8 @@
     "thereIsAnError": "Ha habido un error",
     "weCannotUpdate": "No hemos podido modificar tu Contraseña Maestra. Inténtalo más tarde.",
     "passwordManagerCreated": "¡Tu password manager ya está creado!",
-    "loremIpsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh."
+    "loremIpsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh.",
+    "backToPasswordManager": "Volver a Password Manager",
+    "access": "Acceder"
   }
 }
