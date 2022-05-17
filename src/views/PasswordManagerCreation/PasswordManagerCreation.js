@@ -14,10 +14,10 @@ const PasswordManagerCreation = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState();
 
-  const onFormValid = async () => {
+  const onFormValid = async ({ firstPassword, secondPassword, hint }) => {
     setLoading(true);
     try {
-      await submitForm();
+      await submitForm(firstPassword, secondPassword, hint);
       navigate('/password-manager-feedback', { state: { error: false } });
     } catch (e) {
       navigate('/password-manager-feedback', { state: { error: true } });
