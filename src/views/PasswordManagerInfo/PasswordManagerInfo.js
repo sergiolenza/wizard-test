@@ -17,7 +17,7 @@ const PasswordManagerInfo = () => {
 
   return (
     <>
-      <article className="wizard--content">
+      <article className="wizard--content" aria-label="password-manager-info">
         <TextTitle>{t('pwInfo.createYourPassword')}</TextTitle>
         <div className="password-manager-info">
           <div className="password-manager-info--tip">

@@ -16,7 +16,7 @@ const PasswordManagerFeedback = () => {
 
   return (
     <>
-      <article className="wizard--content">
+      <article className="wizard--content" aria-label="password-manager-feedback">
         {error ? (
           <Placeholder
             icon={<MdOutlineWarningAmber size="3em" />}
