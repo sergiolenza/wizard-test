@@ -14,27 +14,23 @@ const PasswordManagerFeedback = () => {
 
   const { error } = state;
 
-  const ErrorFeedback = (
+  return (
     <article className="wizard--content">
-      <Placeholder
-        icon={<MdOutlineWarningAmber size="3em" />}
-        primaryText={t('pwFeedback.thereIsAnError')}
-        secondaryText={t('pwFeedback.weCannotUpdate')}
-      />
+      {error ? (
+        <Placeholder
+          icon={<MdOutlineWarningAmber size="3em" />}
+          primaryText={t('pwFeedback.thereIsAnError')}
+          secondaryText={t('pwFeedback.weCannotUpdate')}
+        />
+      ) : (
+        <Placeholder
+          icon={<BsCheck2Circle size="3em" />}
+          primaryText={t('pwFeedback.passwordManagerCreated')}
+          secondaryText={t('pwFeedback.loremIpsum')}
+        />
+      )}
     </article>
   );
-
-  const SuccessFeedback = (
-    <article className="wizard--content">
-      <Placeholder
-        icon={<BsCheck2Circle size="3em" />}
-        primaryText={t('pwFeedback.passwordManagerCreated')}
-        secondaryText={t('pwFeedback.loremIpsum')}
-      />
-    </article>
-  );
-
-  return error ? ErrorFeedback : SuccessFeedback;
 };
 
 export default PasswordManagerFeedback;
