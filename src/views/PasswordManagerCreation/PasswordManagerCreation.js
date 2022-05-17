@@ -7,17 +7,15 @@ import TextTitle from '../../components/TextTitle/TextTitle';
 import Button from '../../components/Button/Button';
 import useInput from '../../hooks/useInput';
 import useForm from '../../hooks/useForm';
-import './PasswordManagerCreation.scss';
 import { submitForm } from '../../services/api';
+import './PasswordManagerCreation.scss';
 
 const PasswordManagerCreation = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState();
 
-  const onFormValid = async ({ firstPassword, secondPassword, hint }) => {
+  const onFormValid = async () => {
     setLoading(true);
-    console.log('form is valid!', { firstPassword, secondPassword, hint });
-
     try {
       await submitForm();
       navigate('/password-manager-feedback', { state: { error: false } });

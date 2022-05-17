@@ -3,7 +3,6 @@ import { passwordStrength } from 'check-password-strength';
 import debounce from 'lodash.debounce';
 import { MdOutlineVisibility } from 'react-icons/md';
 import PasswordStrengthBar from '../PasswordStrengthBar/PasswordStrengthBar';
-
 import './Input.scss';
 
 const INPUT_STATUS = {
