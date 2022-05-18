@@ -9,7 +9,7 @@ const renderPasswordManagerInfo = () =>
     </Router>
   );
 
-describe('PasswordManagerInfo component', () => {
+xdescribe('PasswordManagerInfo component', () => {
   it('does render the PasswordManagerInfo', async () => {
     renderPasswordManagerInfo();
     const passwordManagerInfo = await screen.findByRole('article', {

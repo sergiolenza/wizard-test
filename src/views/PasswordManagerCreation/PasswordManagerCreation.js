@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { t } from 'i18next';
 import { MdChevronRight } from 'react-icons/md';
 import Input from '../../components/Input/Input';
@@ -10,16 +10,22 @@ import useForm from '../../hooks/useForm';
 import { submitForm } from '../../services/api';
 import './PasswordManagerCreation.scss';
 
-const PasswordManagerCreation = () => {
+const PasswordManagerCreation = ({ wizardState, setWizardState }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState();
+
+  if (!wizardState.legalAge) {
+    return <Navigate replace to="/password-manager-info" />;
+  }
 
   const onFormValid = async ({ firstPassword, secondPassword, hint }) => {
     setLoading(true);
     try {
       await submitForm(firstPassword, secondPassword, hint);
+      setWizardState({ legalAge: false, firstPassword: '', secondPassword: '', hint: '' });
       navigate('/password-manager-feedback', { state: { error: false } });
     } catch (e) {
+      setWizardState({ ...wizardState, firstPassword, secondPassword, hint });
       navigate('/password-manager-feedback', { state: { error: true } });
     } finally {
       setLoading(false);
@@ -41,19 +47,19 @@ const PasswordManagerCreation = () => {
 
   const firstPasswordProps = useInput({
     name: 'firstPassword',
-    initialValue: '',
+    initialValue: wizardState.firstPassword,
     beforeChange: clearFieldErrors,
   });
 
   const secondPasswordProps = useInput({
     name: 'secondPassword',
-    initialValue: '',
+    initialValue: wizardState.secondPassword,
     beforeChange: clearFieldErrors,
   });
 
   const hintProps = useInput({
     name: 'hint',
-    initialValue: '',
+    initialValue: wizardState.hint,
     beforeChange: clearFieldErrors,
   });
 
@@ -90,8 +96,8 @@ const PasswordManagerCreation = () => {
       autoComplete="off"
       onSubmit={onSubmit}
     >
-      <fieldset className="wizard--fieldset" disabled={loading}>
-        <article className="wizard--content">
+      <fieldset className="wizard--fieldset" aria-label="wizard-fieldset" disabled={loading}>
+        <article className="wizard--content" aria-label="wizard-content">
           <TextTitle>{t('pwCreation.createYourPassword')}</TextTitle>
           <p>{t('pwCreation.shouldCreatePassword')}</p>
           <div className="password-manager-creation--passwords">
@@ -126,7 +132,7 @@ const PasswordManagerCreation = () => {
           />
         </article>
       </fieldset>
-      <footer className="wizard--footer">
+      <footer className="wizard--footer" aria-label="wizard-footer">
         <Button variant="text" disabled={loading} onClick={handleCancelOnClick}>
           {t('common.cancel')}
         </Button>

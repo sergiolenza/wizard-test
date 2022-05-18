@@ -14,7 +14,7 @@ const renderPasswordManagerFeedback = () =>
     </Router>
   );
 
-describe('PasswordManagerFeedback component', () => {
+xdescribe('PasswordManagerFeedback component', () => {
   it('does render the PasswordManagerFeedback', async () => {
     renderPasswordManagerFeedback();
     const passwordManagerFeedback = await screen.findByRole('article', {

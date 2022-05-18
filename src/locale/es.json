@@ -13,7 +13,8 @@
     "howItWorks": "Cómo funciona",
     "createDifferentPassword": "En primer lugar debes crear una contraseña diferente para tus pertenencias electrónicas. No podrás recuperar tu contraseña, así que recuérdala bien.",
     "dataCanYouSave": "Qué datos puedes guardar",
-    "infoCanSave": "Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono móvil, el número de serie de alguno de tus dispositivos o cualquier información que necesites tener en lugar seguro."
+    "infoCanSave": "Por ejemplo, el número de tu tarjeta, el PIN y el PUK de tu teléfono móvil, el número de serie de alguno de tus dispositivos o cualquier información que necesites tener en lugar seguro.",
+    "legalAge": "Tengo la mayoría de edad y acepto que mis datos sean tratados mediante la política de protección de datos"
   },
   "pwCreation": {
     "createYourPassword": "Crea tu password manager",

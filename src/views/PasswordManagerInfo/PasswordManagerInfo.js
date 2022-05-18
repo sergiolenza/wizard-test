@@ -4,16 +4,24 @@ import { t } from 'i18next';
 import { MdChevronRight } from 'react-icons/md';
 import TextTitle from '../../components/TextTitle/TextTitle';
 import Button from '../../components/Button/Button';
+import Checkbox from '../../components/Checkbox/Checkbox';
+import useInput from '../../hooks/useInput';
 import passwordsSvg from '../../assets/img/group.svg';
 import safeBoxSvg from '../../assets/img/group-3.svg';
 import './PasswordManagerInfo.scss';
 
-const PasswordManagerInfo = () => {
+const PasswordManagerInfo = ({ wizardState, setWizardState }) => {
   const navigate = useNavigate();
 
-  const handleNextOnClick = () => {
+  const onClickNext = () => {
+    setWizardState({
+      ...wizardState,
+      legalAge: true,
+    });
     navigate('/password-manager-creation');
   };
+
+  const legalAgeProps = useInput({ name: 'legalAge', initialValue: wizardState.legalAge });
 
   return (
     <>
@@ -43,12 +51,13 @@ const PasswordManagerInfo = () => {
         <p>{t('pwInfo.createDifferentPassword')}</p>
         <h4>{t('pwInfo.dataCanYouSave')}</h4>
         <p>{t('pwInfo.infoCanSave')}</p>
+        <Checkbox label={t('pwInfo.legalAge')} {...legalAgeProps} />
       </article>
       <footer className="wizard--footer">
         <Button variant="text" disabled>
           {t('common.cancel')}
         </Button>
-        <Button variant="contained" onClick={handleNextOnClick}>
+        <Button disabled={!legalAgeProps.checked} variant="contained" onClick={onClickNext}>
           {t('common.next')} <MdChevronRight size="1.5em" />
         </Button>
       </footer>

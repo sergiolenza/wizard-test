@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import NoMatch from './NoMatch';
 
-describe('NoMatch component', () => {
+describe('NoMatch view', () => {
   it('should render the NoMatch view', async () => {
     render(<NoMatch />);
     const noMatch = await screen.findByRole('article', { name: 'no-match' });

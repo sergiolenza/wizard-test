@@ -13,7 +13,8 @@
     "howItWorks": "How it works",
     "createDifferentPassword": "First of all you must create a different password for your electronic belongings. You will not be able to recover your password, so remember it well.",
     "dataCanYouSave": "What data can you save",
-    "infoCanSave": "For example, your card number, the PIN and PUK of your cell phone, the serial number of one of your devices or any information you need to keep in a safe place."
+    "infoCanSave": "For example, your card number, the PIN and PUK of your cell phone, the serial number of one of your devices or any information you need to keep in a safe place.",
+    "legalAge": "I am of legal age and I agree to my data being processed according to the data protection policy."
   },
   "pwCreation": {
     "createYourPassword": "Create your password manager",
