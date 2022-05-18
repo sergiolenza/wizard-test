@@ -1,8 +1,7 @@
 import React from 'react';
 import { useLocation, Navigate, Link } from 'react-router-dom';
 import { t } from 'i18next';
-import { BsCheck2Circle } from 'react-icons/bs';
-import { MdOutlineWarningAmber } from 'react-icons/md';
+import { MdOutlineWarningAmber, MdOutlineCheckCircle } from 'react-icons/md';
 import Placeholder from '../../components/Placeholder/Placeholder';
 
 const PasswordManagerFeedback = () => {
@@ -25,7 +24,7 @@ const PasswordManagerFeedback = () => {
           />
         ) : (
           <Placeholder
-            icon={<BsCheck2Circle size="3em" />}
+            icon={<MdOutlineCheckCircle size="3em" />}
             primaryText={t('pwFeedback.passwordManagerCreated')}
             secondaryText={t('pwFeedback.loremIpsum')}
           />
