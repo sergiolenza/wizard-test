@@ -1,14 +1,42 @@
-In the project directory, you can run:
+# wizard-test 🎉
 
-### `npm start`
+This is my proposal for a technical test for a client.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The project is about making a multi-form wizard from scratch, using custom components, using HTML semantic tags, handling response asynchrony, using best practices, styling methodologies, i18n and performance.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+I have only used 2 external dependencies apart from the ones already given.
 
-### `npm test`
+- [check-password-strength](https://github.com/deanilvincent/check-password-strength), which is a package that exports a function to return the strength of a password in values from 0 to 3.
+- [lodash.debounce](https://www.npmjs.com/package/lodash.debounce) which is the lodash debounce function that helps me to avoid overloading a component with calls.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 1. Install 🆕
+
+```bash
+npm install
+```
+
+## 2. Start 👨‍💻
+
+```bash
+npm start
+```
+
+## 3. Build 🛠
+
+```bash
+npm run build
+```
+
+## 4. Analyze the build 🕵️‍♀️
+
+```bash
+npm run analyze
+```
+
+A local server will be set up with `webpack-bundle-analyzer` where you can see all the chunks and code splitting.
+
+## 5. Lint ✏️
+
+```bash
+npm run lint
+```
