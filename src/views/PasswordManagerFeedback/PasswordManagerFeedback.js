@@ -18,6 +18,7 @@ const PasswordManagerFeedback = () => {
       <article className="wizard--content" aria-label="password-manager-feedback">
         {error ? (
           <Placeholder
+            error
             icon={<MdOutlineWarningAmber size="3em" />}
             primaryText={t('pwFeedback.thereIsAnError')}
             secondaryText={t('pwFeedback.weCannotUpdate')}
@@ -30,7 +31,7 @@ const PasswordManagerFeedback = () => {
           />
         )}
       </article>
-      <footer className="wizard--footer end">
+      <footer className="wizard--footer end" aria-label="wizard-footer">
         {error ? (
           <Link to="/">{t('pwFeedback.backToPasswordManager')}</Link>
         ) : (

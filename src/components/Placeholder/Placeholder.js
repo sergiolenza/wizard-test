@@ -1,9 +1,9 @@
 import React from 'react';
 import './Placeholder.scss';
 
-const Placeholder = ({ icon, primaryText, secondaryText }) => {
+const Placeholder = ({ error, icon, primaryText, secondaryText }) => {
   return (
-    <div className="placeholder">
+    <div className={`placeholder${error ? ' error' : ''}`} role="banner" aria-label="placeholder">
       <div className="placeholder--icon">{icon}</div>
       <div className="placeholder--text">
         <h2>{primaryText}</h2>
