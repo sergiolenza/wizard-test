@@ -7,7 +7,6 @@ import './Input.scss';
 
 const INPUT_STATUS = {
   ACTIVE: 'active',
-  FOCUSED: 'focus',
   ERROR: 'error',
 };
 
@@ -66,13 +65,14 @@ const Input = ({
 
   return (
     <div className={`input-container${error ? ' has-error' : ''}${fullWidth ? ' full-width' : ''}`}>
-      <label htmlFor={props.name} className="input--label">
+      <label className="input--label" htmlFor={props.name} aria-label="input-label">
         {label}
       </label>
       <div className={`input--box ${inputBoxClass ?? ''}`}>
         <input
           className="input--field"
           id={props.name}
+          aria-labelledby={props.name}
           type={inputType}
           onClick={handleInputClick}
           onFocus={handleInputFocus}
@@ -83,6 +83,7 @@ const Input = ({
         />
         {isInputPassword && (
           <figure
+            aria-label="input-box-decorator"
             className={`input--box--decorator ${inputType}`}
             onClick={handleOnClickPasswordDecorator}
           >
