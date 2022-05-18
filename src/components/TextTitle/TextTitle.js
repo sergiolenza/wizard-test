@@ -5,7 +5,7 @@ const TextTitle = ({ children }) => {
   return (
     <>
       <h1 className="text-title">{children}</h1>
-      <figure className="text-title--figure" />
+      <figure className="text-title--figure" aria-label="text-title-underline" />
     </>
   );
 };
