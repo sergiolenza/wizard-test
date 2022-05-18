@@ -53,7 +53,7 @@ const PasswordManagerInfo = ({ wizardState, setWizardState }) => {
         <p>{t('pwInfo.infoCanSave')}</p>
         <Checkbox label={t('pwInfo.legalAge')} {...legalAgeProps} />
       </article>
-      <footer className="wizard--footer">
+      <footer className="wizard--footer" aria-label="wizard-footer">
         <Button variant="text" disabled>
           {t('common.cancel')}
         </Button>
