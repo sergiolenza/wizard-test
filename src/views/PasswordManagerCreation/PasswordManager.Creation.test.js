@@ -1,19 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter as Router, useNavigate } from 'react-router-dom';
+import { MemoryRouter as Router } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import PasswordManagerCreation from './PasswordManagerCreation';
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  // useHistory: () => ({
-  //   push: jest.fn(),
-  //   replace: jest.fn(),
-  // }),
-  useNavigate: jest.fn(),
-}));
-
 const wizardState = {
-  legalAge: false,
+  legalAge: true,
   firstPassword: '',
   secondPassword: '',
   hint: '',
@@ -21,15 +12,15 @@ const wizardState = {
 
 const setWizardState = jest.fn();
 
-const renderPasswordManagerCreation = () =>
+const renderPasswordManagerCreation = (state = wizardState, setState = setWizardState) =>
   render(
     <Router>
-      <PasswordManagerCreation wizardState={wizardState} setWizardState={setWizardState} />
+      <PasswordManagerCreation wizardState={state} setWizardState={setState} />
     </Router>
   );
 
-xdescribe('PasswordManagerCreation view', () => {
-  it('does render the form', async () => {
+describe('PasswordManagerCreation view', () => {
+  it('should render the form', async () => {
     renderPasswordManagerCreation();
     const form = await screen.findByRole('form', { name: 'password-manager-creation' });
     expect(form).toBeInTheDocument();
@@ -47,24 +38,27 @@ xdescribe('PasswordManagerCreation view', () => {
     expect(article).toBeInTheDocument();
     expect(article).toHaveClass('wizard--content');
   });
-  it('should not navigate if there are empty passwords', async () => {
+  it('should not call setWizardState if form is invalid', async () => {
     renderPasswordManagerCreation();
+
     const footer = await screen.findByRole('contentinfo', { name: 'wizard-footer' });
     const submitButton = footer.lastChild;
     userEvent.click(submitButton);
-    expect(useNavigate).toHaveBeenCalled();
-    expect(useNavigate).toHaveBeenCalledTimes(1);
+    await expect(setWizardState).toHaveBeenCalledTimes(0);
   });
-  it('should navigate if there are correct passwords', async () => {
-    renderPasswordManagerCreation();
+  it('should call setWizardState if form is valid', async () => {
+    const state = {
+      legalAge: true,
+      firstPassword: 'Vuvuzela14',
+      secondPassword: 'Vuvuzela14',
+      hint: 'Vuvuzela14',
+    };
+    renderPasswordManagerCreation(state);
+
     const footer = await screen.findByRole('contentinfo', { name: 'wizard-footer' });
     const submitButton = footer.lastChild;
-
-    const input = await screen.findAllByRole('textbox');
-    screen.debug(input);
-
     userEvent.click(submitButton);
-    expect(useNavigate).toHaveBeenCalled();
-    expect(useNavigate).toHaveBeenCalledTimes(1);
+
+    // await waitFor(() => expect(setWizardState).toHaveBeenCalledTimes(1));
   });
 });
