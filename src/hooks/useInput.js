@@ -2,22 +2,26 @@ import { useState } from 'react';
 
 const useInput = ({ name, initialValue, beforeChange }) => {
   const [value, setValue] = useState(initialValue);
+  const isCheckbox = typeof value === 'boolean';
 
   return {
     id: name,
     name,
-    value,
+    ...(isCheckbox ? { checked: value } : { value }),
     onChange: (data) => {
       let fieldName;
       let fieldValue;
 
       if (data !== null && data !== undefined) {
-        const { isLuxonDateTime } = data;
-        fieldName = isLuxonDateTime ? name : data.target.name;
-        fieldValue = isLuxonDateTime ? data : data.target.value;
+        fieldName = data.target.name;
+        fieldValue = data.target.value;
       } else {
         fieldName = name;
         fieldValue = '';
+      }
+
+      if (isCheckbox) {
+        fieldValue = data.target.checked;
       }
 
       if (typeof beforeChange === 'function') {

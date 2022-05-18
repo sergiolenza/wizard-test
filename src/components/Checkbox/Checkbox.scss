@@ -1,0 +1,39 @@
+@import '../../styles/base.scss';
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem 0;
+  .checkbox--field {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0 0.5rem 0 0;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    cursor: pointer;
+    color: $secondary-color;
+    border: 2px solid $secondary-color;
+    border-radius: 2px;
+    display: grid;
+    place-content: center;
+    &::before {
+      content: '';
+      width: calc(1.5rem - 4px);
+      height: calc(1.5rem - 4px);
+      color: transparent;
+    }
+    &:checked::before {
+      background-color: $primary-color;
+    }
+    :disabled {
+      cursor: not-allowed;
+    }
+  }
+  .checkbox--label {
+    margin-top: 1px;
+  }
+}
+
+input[type='checkbox']:disabled {
+  cursor: not-allowed;
+}
