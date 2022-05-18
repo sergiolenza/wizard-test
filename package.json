@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test",
+    "test": "react-scripts test --verbose",
     "build": "react-scripts build --stats",
     "analyze": "webpack-bundle-analyzer ./build/bundle-stats.json",
     "lint": "eslint",
