@@ -99,7 +99,10 @@ const PasswordManagerCreation = ({ wizardState, setWizardState }) => {
       <fieldset className="wizard--fieldset" aria-label="wizard-fieldset" disabled={loading}>
         <article className="wizard--content" aria-label="wizard-content">
           <TextTitle>{t('pwCreation.createYourPassword')}</TextTitle>
-          <p>{t('pwCreation.shouldCreatePassword')}</p>
+          <p>
+            <span>{t('pwCreation.shouldCreatePassword')}</span>
+            <span>{t('pwCreation.shouldCreatePassword')}</span>
+          </p>
           <div className="password-manager-creation--passwords">
             <Input
               type="password"
@@ -121,7 +124,7 @@ const PasswordManagerCreation = ({ wizardState, setWizardState }) => {
               {...secondPasswordProps}
             />
           </div>
-          <p>{t('pwCreation.alsoCanCreateHint')}.</p>
+          <p>{t('pwCreation.alsoCanCreateHint')}</p>
           <Input
             type="text"
             label={t('pwCreation.createHint')}
