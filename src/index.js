@@ -6,7 +6,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import enTranslations from './locale/en.json';
 import esTranslations from './locale/es.json';
-import './index.css';
+import './index.scss';
 
 i18next.use(LanguageDetector).init({
   detection: { order: ['navigator'] },
