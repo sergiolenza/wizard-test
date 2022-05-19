@@ -128,6 +128,7 @@ const PasswordManagerCreation = ({ wizardState, setWizardState }) => {
             placeholder={t('pwCreation.writeYourHint')}
             fullWidth
             maxLength={255}
+            showCharCounter
             {...hintProps}
           />
         </article>

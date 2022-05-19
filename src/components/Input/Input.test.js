@@ -47,6 +47,12 @@ describe('Input component', () => {
     expect(strengthBar).toBeInTheDocument();
     expect(strengthBar).toHaveClass('password-strength-bar');
   });
+  it('should render the char counter', async () => {
+    render(<Input type="text" value="abc" showCharCounter />);
+    const charCounter = await screen.findByRole('status', { name: 'input-box-char-counter' });
+    expect(charCounter).toBeInTheDocument();
+    expect(charCounter).toHaveClass('input--box--char-counter');
+  });
   it('should forward the rest of the props', async () => {
     render(<Input accept="audio/*" />);
     const input = await screen.findByRole('textbox');

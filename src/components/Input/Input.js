@@ -14,8 +14,10 @@ const Input = ({
   type = 'text',
   label,
   value,
+  maxLength,
   onChange,
   showStrength,
+  showCharCounter,
   error,
   fullWidth,
   ...props
@@ -79,6 +81,7 @@ const Input = ({
           onBlur={handleInputBlur}
           value={value}
           onChange={handleOnChange}
+          maxLength={maxLength}
           {...props}
         />
         {isInputPassword && (
@@ -92,6 +95,16 @@ const Input = ({
         )}
         {value && isInputPassword && showStrength && (
           <PasswordStrengthBar strength={passwordScore} />
+        )}
+        {showCharCounter && (
+          <div
+            role="status"
+            className="input--box--char-counter"
+            aria-label="input-box-char-counter"
+          >
+            {value.length}
+            {maxLength ? `/${maxLength}` : null}
+          </div>
         )}
       </div>
       {error ? <small className="input--error-placeholder">{error}</small> : null}
