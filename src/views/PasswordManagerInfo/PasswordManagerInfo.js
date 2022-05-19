@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { t } from 'i18next';
 import { MdChevronRight } from 'react-icons/md';
 import TextTitle from '../../components/TextTitle/TextTitle';
+import TextSubtitle from '../../components/TextSubtitle/TextSubtitle';
 import Button from '../../components/Button/Button';
 import Checkbox from '../../components/Checkbox/Checkbox';
 import useInput from '../../hooks/useInput';
@@ -47,9 +48,9 @@ const PasswordManagerInfo = ({ wizardState, setWizardState }) => {
             <small className="password-manager-info--tip-text">{t('pwInfo.createMasterKey')}</small>
           </div>
         </div>
-        <h4>{t('pwInfo.howItWorks')}</h4>
+        <TextSubtitle>{t('pwInfo.howItWorks')}</TextSubtitle>
         <p>{t('pwInfo.createDifferentPassword')}</p>
-        <h4>{t('pwInfo.dataCanYouSave')}</h4>
+        <TextSubtitle>{t('pwInfo.dataCanYouSave')}</TextSubtitle>
         <p>{t('pwInfo.infoCanSave')}</p>
         <Checkbox label={t('pwInfo.legalAge')} {...legalAgeProps} />
       </article>
