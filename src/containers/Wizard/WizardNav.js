@@ -8,7 +8,7 @@ const WizardStep = ({ step, stepNumber, shouldShowLine, isCompleted }) => {
   const isDisabled = !isActive && !isCompleted;
 
   const stepCircleClasses = [
-    'wizard-nav--step-circle',
+    'wizard--nav--step-circle',
     isActive && 'active',
     isCompleted && 'completed',
     isDisabled && 'disabled',
@@ -17,7 +17,7 @@ const WizardStep = ({ step, stepNumber, shouldShowLine, isCompleted }) => {
     .join(' ');
 
   const stepLineClasses = [
-    'wizard-nav--step-line',
+    'wizard--nav--step-line',
     (isActive || isDisabled) && 'disabled',
     isCompleted && 'completed',
   ]
@@ -40,7 +40,7 @@ const WizardNav = ({ steps }) => {
   const isTheLastOne = activeStep + 1 === steps.length;
 
   return !isTheLastOne ? (
-    <nav className="wizard-nav">
+    <nav className="wizard--nav">
       {activeStep > -1 &&
         steps.map((step, index) => (
           <WizardStep

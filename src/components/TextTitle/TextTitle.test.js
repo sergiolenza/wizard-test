@@ -12,6 +12,6 @@ describe('TextTitle component', () => {
     render(<TextTitle>test</TextTitle>);
     const underline = await screen.findByRole('figure', { name: 'text-title-underline' });
     expect(underline).toBeInTheDocument();
-    expect(underline).toHaveClass('text-title--figure');
+    expect(underline).toHaveClass('text-title-figure');
   });
 });

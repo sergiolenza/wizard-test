@@ -1,61 +1,61 @@
 @import '../../styles/base.scss';
 
-$wizard-nav-background-color: #c2cbd0;
+$background-color: #c2cbd0;
 
-.wizard-nav {
+.wizard--nav {
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $wizard-nav-background-color;
-}
+  background-color: $background-color;
 
-.wizard-nav--step-circle {
-  margin: 0;
-  width: 40px;
-  height: 40px;
-  background-color: $secondary-color;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100px;
-  box-shadow: $elevation-2;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out, opacity 0.2s ease-out,
-    border-bottom 0.2s ease-out;
-  &.completed {
-    background-color: $primary-color;
+  .wizard--nav--step-circle {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    background-color: $secondary-color;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    box-shadow: $elevation-2;
+    transition: color 0.2s ease-out, background-color 0.2s ease-out, opacity 0.2s ease-out,
+      border-bottom 0.2s ease-out;
+    &.completed {
+      background-color: $primary-color;
+      color: white;
+    }
+    &.active {
+      transform: scale(120%);
+      box-shadow: $elevation-6;
+    }
+    &.active::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-bottom: 12px solid white;
+      bottom: -16px;
+    }
+    &.disabled {
+      opacity: 50%;
+    }
   }
-  &.active {
-    transform: scale(120%);
-    box-shadow: $elevation-6;
-  }
-  &.active::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    border-bottom: 12px solid white;
-    bottom: -16px;
-  }
-  &.disabled {
-    opacity: 50%;
-  }
-}
 
-.wizard-nav--step-line {
-  margin: 0;
-  height: 4px;
-  width: 30px;
-  background-color: $secondary-color;
-  &.completed {
-    background-color: $primary-color;
-    color: white;
-  }
-  &.disabled {
-    opacity: 50%;
+  .wizard--nav--step-line {
+    margin: 0;
+    height: 4px;
+    width: 30px;
+    background-color: $secondary-color;
+    &.completed {
+      background-color: $primary-color;
+      color: white;
+    }
+    &.disabled {
+      opacity: 50%;
+    }
   }
 }
