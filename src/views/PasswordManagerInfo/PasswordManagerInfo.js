@@ -58,7 +58,12 @@ const PasswordManagerInfo = ({ wizardState, setWizardState }) => {
         <Button variant="text" disabled>
           {t('common.cancel')}
         </Button>
-        <Button disabled={!legalAgeProps.checked} variant="contained" onClick={onClickNext}>
+        <Button
+          disabled={!legalAgeProps.checked}
+          variant="contained"
+          onClick={onClickNext}
+          id="password-manager-info-next-button"
+        >
           {t('common.next')} <MdChevronRight size="1.5em" />
         </Button>
       </footer>

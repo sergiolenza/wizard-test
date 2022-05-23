@@ -140,7 +140,12 @@ const PasswordManagerCreation = ({ wizardState, setWizardState }) => {
         <Button variant="text" disabled={loading} onClick={handleCancelOnClick}>
           {t('common.cancel')}
         </Button>
-        <Button type="submit" disabled={loading} variant="contained">
+        <Button
+          type="submit"
+          disabled={loading}
+          variant="contained"
+          id="password-manager-creation-next-button"
+        >
           {loading ? t('pwCreation.creating') : t('pwCreation.create')}{' '}
           <MdChevronRight size="1.5em" />
         </Button>

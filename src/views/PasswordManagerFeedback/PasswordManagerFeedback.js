@@ -19,13 +19,13 @@ const PasswordManagerFeedback = () => {
         {error ? (
           <Placeholder
             error
-            icon={<MdOutlineWarningAmber size="3em" />}
+            icon={<MdOutlineWarningAmber size="3em" id="warning" />}
             primaryText={t('pwFeedback.thereIsAnError')}
             secondaryText={t('pwFeedback.weCannotUpdate')}
           />
         ) : (
           <Placeholder
-            icon={<MdOutlineCheckCircle size="3em" />}
+            icon={<MdOutlineCheckCircle size="3em" id="check" />}
             primaryText={t('pwFeedback.passwordManagerCreated')}
             secondaryText={t('pwFeedback.loremIpsum')}
           />

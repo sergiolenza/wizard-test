@@ -20,7 +20,9 @@
     "build": "react-scripts build --stats",
     "analyze": "webpack-bundle-analyzer ./build/bundle-stats.json",
     "lint": "eslint",
-    "lint:check": "eslint-config-prettier .eslintrc"
+    "lint:check": "eslint-config-prettier .eslintrc",
+    "cy:open": "cypress open",
+    "cy:test": "cypress run"
   },
   "browserslist": {
     "production": [
@@ -35,13 +37,15 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^14.2.0",
     "@babel/core": "^7.17.10",
     "@babel/eslint-parser": "^7.17.0",
     "@babel/preset-react": "^7.16.7",
+    "@testing-library/cypress": "^8.0.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^14.2.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "cypress": "^9.6.1",
     "eslint": "^8.15.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
