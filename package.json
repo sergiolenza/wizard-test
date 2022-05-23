@@ -21,8 +21,7 @@
     "analyze": "webpack-bundle-analyzer ./build/bundle-stats.json",
     "lint": "eslint",
     "lint:check": "eslint-config-prettier .eslintrc",
-    "cy:open": "cypress open",
-    "cy:test": "cypress run"
+    "e2e": "cypress run"
   },
   "browserslist": {
     "production": [

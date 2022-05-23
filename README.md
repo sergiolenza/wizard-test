@@ -21,13 +21,25 @@ npm install
 npm start
 ```
 
-## 3. Build 🛠
+## 3. Unit Tests 👨‍💻
+
+```bash
+npm run test
+```
+
+## 4. E2E Tests 👨‍💻
+
+```bash
+npm run e2e
+```
+
+## 5. Build 🛠
 
 ```bash
 npm run build
 ```
 
-## 4. Analyze the build 🕵️‍♀️
+## 6. Analyze the build 🕵️‍♀️
 
 ```bash
 npm run analyze
@@ -35,7 +47,7 @@ npm run analyze
 
 A local server will be set up with `webpack-bundle-analyzer` where you can see all the chunks and code splitting.
 
-## 5. Lint ✏️
+## 7. Lint ✏️
 
 ```bash
 npm run lint
